@@ -1,0 +1,48 @@
+// File: aSPaa2.txt
+// Data file for SeaPort projects
+// Date: Sat Mar 24 20:17:05 EDT 2018
+// parameters: 1 3 3 3 2 4
+//   ports, docks, pships, cships, jobs, persons
+
+// port   name index parent(null)
+//    port   <string> <int> <int>
+port Oranjestad 10002 0
+
+// dock   name index parent(port)
+//    dock   <string> <int> <int>
+  dock Pier_13 20013 10002 30010
+  dock Pier_14 20014 10002 30011
+  dock Pier_17 20017 10002 40011
+  dock Pier_16 20016 10002 40010
+  dock Pier_15 20015 10002 30012
+  dock Pier_18 20018 10002 40012
+
+// pship  name index parent(dock/port) weight length width draft numPassengers numRooms numOccupied
+//    pship  <string> <int> <int> <double> <double> <double> <double> <int> <int> <int>
+    pship             Brutisms 30011 20014 76.53 117.07 119.37 18.11 436 851 218
+    pship             Hemlocks 30010 20013 211.21 114.52 84.71 28.58 1830 554 554
+    pship                  Own 30012 20015 183.44 268.34 82.32 23.17 2491 831 831
+
+// cship  name index parent(dock/port) weight length width draft cargoWeight cargoVolume cargoValue
+//    cship  <string> <int> <int> <double> <double> <double> <double> <double> <double> <double>
+    cship              Lindane 40011 20017 217.52 107.63 126.46 34.13 182.45 166.56 228.39
+    cship           Acetifying 40012 20018 50.73 159.76 108.26 25.58 55.52 171.39 653.18
+    cship              Fretful 40010 20016 121.05 476.70 123.89 23.21 132.62 119.10 120.53
+
+// person name index parent skill
+//    person <string> <int> <int> <string>
+    person                Grady 50013 10002 captain
+    person            Stephanie 50011 10002 clerk
+    person                Mindy 50014 10002 cleaner
+    person                 Mark 50012 10002 craneOperator
+    person                Craig 50015 10002 mate
+
+// job    name index parent duration [skill]* (zero or more, matches skill in person, may repeat)
+//    job    <string> <int> <int> <double> [<string>]*
+    job         Job_75_47_72 60010 30010 64.14 inspector janitor
+    job         Job_81_37_62 60014 30012 99.55 cleaner mechanic
+    job         Job_88_26_99 60012 30011 110.54 crew
+    job         Job_67_66_67 60016 40010 72.87 janitor carpenter craneOperator
+    job         Job_36_99_48 60015 30012 57.44 janitor captain
+    job         Job_39_93_86 60013 30011 37.20 electrician cleaner electrician
+    job         Job_40_62_93 60011 30010 79.42 painter

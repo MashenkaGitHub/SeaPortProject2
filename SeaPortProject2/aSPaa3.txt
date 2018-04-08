@@ -1,0 +1,84 @@
+// File: aSPaa3.txt
+// Data file for SeaPort projects
+// Date: Sat Mar 24 20:18:00 EDT 2018
+// parameters: 2 5 4 5 2 3
+//   ports, docks, pships, cships, jobs, persons
+
+// port   name index parent(null)
+//    port   <string> <int> <int>
+port Cairns 10004 0
+port Dzhezkazgan 10003 0
+
+// dock   name index parent(port)
+//    dock   <string> <int> <int>
+  dock Pier_21 20021 10003 30015
+  dock Pier_23 20023 10003 40013
+  dock Pier_28 20028 10004 40018
+  dock Pier_20 20020 10003 30014
+  dock Pier_26 20026 10004 30019
+  dock Pier_19 20019 10003 30013
+  dock Pier_24 20024 10004 30017
+  dock Pier_22 20022 10003 30016
+  dock Pier_25 20025 10004 30018
+  dock Pier_27 20027 10004 30020
+
+// pship  name index parent(dock/port) weight length width draft numPassengers numRooms numOccupied
+//    pship  <string> <int> <int> <double> <double> <double> <double> <int> <int> <int>
+    pship          Crenelation 30019 20026 51.50 189.24 109.55 25.16 644 426 322
+    pship                Begin 30017 20024 115.79 286.07 39.90 18.24 703 505 351
+    pship            Hydrolyze 30013 20019 122.20 472.09 54.37 28.99 401 232 200
+    pship          Nickelodeon 30015 20021 242.84 425.34 75.71 20.26 1890 489 489
+    pship          Deliquesced 30016 20022 61.89 158.26 54.29 22.82 285 913 142
+    pship          Firecracker 30020 20027 156.59 405.98 95.55 28.85 1201 837 600
+    pship            Scorching 30014 20020 84.54 468.31 53.80 44.54 1509 807 754
+    pship              Blabbed 30018 20025 75.02 220.98 75.78 30.96 215 102 102
+
+// cship  name index parent(dock/port) weight length width draft cargoWeight cargoVolume cargoValue
+//    cship  <string> <int> <int> <double> <double> <double> <double> <double> <double> <double>
+    cship          Denigrating 40018 20028 134.41 286.03 42.75 33.40 104.73 157.62 464.02
+    cship                Rains 40016 10003 180.13 447.39 56.54 32.64 133.72 137.46 864.74
+    cship               Shotes 40013 20023 219.40 102.39 124.75 37.20 115.59 182.85 604.86
+    cship           Leaderless 40015 10003 113.29 377.28 123.81 40.86 162.82 162.30 675.46
+    cship            Cerebrums 40022 10004 247.34 224.06 94.15 38.06 191.72 120.10 973.35
+    cship           Holystones 40014 10003 131.38 270.18 89.28 39.25 201.15 187.02 155.02
+    cship       Embellishments 40019 10004 199.64 424.80 99.10 17.72 190.19 130.60 126.74
+    cship                Bruce 40021 10004 208.35 131.73 129.26 23.19 89.64 109.59 70.44
+    cship                 Cuss 40020 10004 210.25 371.75 126.52 38.65 92.77 154.53 699.50
+    cship       Shamefacedness 40017 10003 228.80 129.19 92.17 19.28 37.80 114.71 669.95
+
+// person name index parent skill
+//    person <string> <int> <int> <string>
+    person                Diane 50025 10004 electrician
+    person             Clifford 50018 10003 janitor
+    person                Molly 50022 10004 clerk
+    person                  Tom 50023 10004 painter
+    person               Leland 50026 10004 captain
+    person               Ismael 50019 10003 mechanic
+    person                 Pete 50020 10003 inspector
+    person               Emilio 50024 10004 driver
+    person                 Jean 50016 10003 inspector
+    person                 Hugh 50017 10003 carpenter
+    person                 Fred 50021 10004 electrician
+
+// job    name index parent duration [skill]* (zero or more, matches skill in person, may repeat)
+//    job    <string> <int> <int> <double> [<string>]*
+    job         Job_78_87_83 60036 40020 44.08 painter
+    job         Job_94_15_92 60020 30014 54.89
+    job         Job_34_93_58 60025 40015 67.10 carpenter
+    job         Job_36_65_23 60029 30018 79.90 inspector stevedore
+    job         Job_75_14_35 60018 30013 96.64 painter captain
+    job         Job_57_91_29 60028 30017 38.37 mate
+    job         Job_36_65_29 60026 40017 28.33 clerk
+    job         Job_19_27_97 60019 30014 42.53 electrician engineer driver
+    job         Job_87_29_33 60021 30015 79.77 craneOperator cleaner
+    job         Job_23_25_12 60031 30019 24.87 janitor
+    job         Job_97_61_77 60024 30016 26.92 clerk
+    job         Job_32_27_75 60030 30018 118.53
+    job         Job_59_52_63 60027 30017 34.43 inspector engineer painter
+    job         Job_67_25_93 60032 30019 53.95
+    job         Job_76_77_65 60034 30020 30.06 driver janitor
+    job         Job_76_80_54 60017 30013 67.94 electrician mechanic electrician
+    job         Job_59_95_21 60033 30020 24.06 craneOperator
+    job         Job_61_30_15 60022 30015 40.95
+    job         Job_67_65_35 60023 30016 107.85 carpenter cleaner
+    job         Job_91_91_72 60035 40019 102.45 captain

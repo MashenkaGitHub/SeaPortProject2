@@ -1,0 +1,79 @@
+// File: aSPaa1.txt
+// Data file for SeaPort projects
+// Date: Sat Mar 24 20:16:31 EDT 2018
+// parameters: 2 4 5 5 1 4
+//   ports, docks, pships, cships, jobs, persons
+
+// port   name index parent(null)
+//    port   <string> <int> <int>
+port Merak 10001 0
+port Bangkok_(Unithai) 10000 0
+
+// dock   name index parent(port)
+//    dock   <string> <int> <int>
+  dock Pier_9 20009 10001 30009
+  dock Pier_5 20005 10001 30005
+  dock Pier_11 20011 10001 40006
+  dock Pier_6 20006 10001 30006
+  dock Pier_1 20001 10000 30001
+  dock Pier_3 20003 10000 30003
+  dock Pier_2 20002 10000 30002
+  dock Pier_12 20012 10001 40007
+  dock Pier_0 20000 10000 30000
+  dock Pier_8 20008 10001 30008
+  dock Pier_7 20007 10001 30007
+  dock Pier_10 20010 10001 40005
+  dock Pier_4 20004 10000 30004
+
+// pship  name index parent(dock/port) weight length width draft numPassengers numRooms numOccupied
+//    pship  <string> <int> <int> <double> <double> <double> <double> <int> <int> <int>
+    pship          Acquiesence 30001 20001 229.24 126.61 125.15 18.36 938 784 469
+    pship            Shameless 30005 20005 175.90 273.12 54.76 20.37 3033 1030 1030
+    pship               Carobs 30006 20006 197.13 289.60 33.74 30.88 2045 579 579
+    pship               Amigas 30000 20000 168.82 342.78 90.92 33.72 1139 384 384
+    pship                 Logo 30008 20008 244.83 330.50 62.06 33.75 2046 607 607
+    pship            Alveolars 30009 20009 211.47 480.12 33.91 35.10 978 585 489
+    pship              Crumple 30002 20002 231.83 226.86 56.36 16.70 789 720 394
+    pship              Mopeder 30003 20003 203.84 442.49 100.24 40.25 233 698 116
+    pship          Oxygenizing 30004 20004 52.88 251.30 117.17 17.19 1248 401 401
+    pship           Jimsonweed 30007 20007 100.70 187.42 121.44 18.87 520 231 231
+
+// cship  name index parent(dock/port) weight length width draft cargoWeight cargoVolume cargoValue
+//    cship  <string> <int> <int> <double> <double> <double> <double> <double> <double> <double>
+    cship           Drizzliest 40002 10000 154.94 429.24 106.50 20.26 72.77 197.65 719.68
+    cship            Bothering 40004 10000 88.84 252.33 125.55 37.41 115.84 162.57 838.67
+    cship     Bureaucratically 40006 20011 215.04 301.96 120.64 42.97 155.65 180.50 228.98
+    cship         Enchantments 40009 10001 230.39 289.16 43.60 24.62 176.99 145.05 580.40
+    cship             Waterier 40008 10001 216.07 174.94 40.72 39.31 155.67 165.37 276.43
+    cship              Lapdogs 40001 10000 50.57 269.05 31.91 27.56 181.91 171.51 404.33
+    cship             Aglimmer 40000 10000 83.85 183.63 42.91 32.42 58.24 183.52 696.68
+    cship             Lustiest 40007 20012 231.13 111.26 52.52 35.27 38.21 179.91 218.64
+    cship            Mannequin 40003 10000 195.66 457.84 122.75 44.14 124.28 173.92 914.60
+    cship             Inviably 40005 20010 188.70 330.81 59.43 38.44 159.11 175.41 645.41
+
+// person name index parent skill
+//    person <string> <int> <int> <string>
+    person                Lamar 50008 10001 engineer
+    person              Ernesto 50000 10000 carpenter
+    person               Olivia 50006 10001 clerk
+    person                Alvin 50003 10000 clerk
+    person              Ignacio 50007 10001 electrician
+    person              Lillian 50010 10001 driver
+    person                 Elsa 50005 10001 cleaner
+    person                Larry 50002 10000 engineer
+    person                Moses 50004 10000 painter
+    person                 Nora 50009 10001 stevedore
+    person              Tabitha 50001 10000 clerk
+
+// job    name index parent duration [skill]* (zero or more, matches skill in person, may repeat)
+//    job    <string> <int> <int> <double> [<string>]*
+    job         Job_19_76_79 60002 30002 86.21 mate mate mechanic
+    job         Job_84_17_29 60003 30003 75.47
+    job         Job_65_84_27 60000 30000 100.24 electrician captain cleaner
+    job         Job_14_80_57 60009 30009 93.81
+    job         Job_60_32_64 60001 30001 81.97 crew
+    job         Job_91_95_38 60008 30008 102.39 mechanic captain
+    job         Job_72_99_97 60004 30004 87.16 cleaner
+    job         Job_18_49_46 60005 30005 64.27 captain captain painter
+    job         Job_88_66_96 60007 30007 80.37 driver
+    job         Job_52_45_50 60006 30006 97.40 electrician craneOperator
